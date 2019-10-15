@@ -2,10 +2,22 @@
 
 ## What is it
 
+Before
+
 ```python
 def view(request):
     # I want to use request body
+    import json
+    data = json.loads(request.body)
+    ...
+```
 
+Now
+
+```python
+def view(request):
+    # use request body directly
+    request.data
 ```
 
 ## Compatibilities
